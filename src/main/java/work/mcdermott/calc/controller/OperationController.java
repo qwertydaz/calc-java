@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class CalculatorController {
+public class OperationController {
 
     private final OperationService operationService;
 
-    public CalculatorController(OperationService operationService) {
+    public OperationController(OperationService operationService) {
         this.operationService = operationService;
     }
 
