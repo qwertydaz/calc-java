@@ -1,5 +1,6 @@
 package work.mcdermott.calc.controller;
 
+import org.springframework.web.bind.annotation.RequestMapping;
 import work.mcdermott.calc.request.Addition;
 import work.mcdermott.calc.request.Division;
 import work.mcdermott.calc.request.Multiplication;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/operation")
 public class OperationController {
 
     private final OperationService operationService;

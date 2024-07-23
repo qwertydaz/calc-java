@@ -1,9 +1,11 @@
 package work.mcdermott.calc.service;
 
+import work.mcdermott.calc.err.OperationException;
 import work.mcdermott.calc.request.Addition;
 import work.mcdermott.calc.request.Division;
 import work.mcdermott.calc.request.Multiplication;
 import work.mcdermott.calc.request.Subtraction;
+import work.mcdermott.calc.response.ErrorResponse;
 import work.mcdermott.calc.response.IResponse;
 import work.mcdermott.calc.response.OperationResponse;
 
@@ -25,6 +27,11 @@ public class OperationService {
     }
 
     public IResponse divide(Division req) {
-        return new OperationResponse(req.quotient());
+        try {
+            return new OperationResponse(req.quotient());
+        }
+        catch (OperationException e) {
+            return new ErrorResponse(e.getMessage());
+        }
     }
 }
